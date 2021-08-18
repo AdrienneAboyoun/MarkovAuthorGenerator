@@ -12,6 +12,7 @@ from wtforms.validators import DataRequired
 app = Flask(__name__, template_folder='../templates')
 
 # don´t upload to github/glitch as plaintext
+#need to change now woops.
 app.config['SECRET_KEY'] = 'EtsnSkuUKV:>qx?T^*eahFwq+[c!5}'
 Bootstrap(app)
 
@@ -42,7 +43,6 @@ def index():
         form.p_length.data = ""
         form.s_length.data = ""
         os.chdir(os.pardir)
-        print(os.path.abspath(os.getcwd()))
         if (not already_downloaded(directories, os.path.join(os.path.abspath(os.getcwd()), 'data'))):
             for a in authors:
                 scrape.download(a,lang)

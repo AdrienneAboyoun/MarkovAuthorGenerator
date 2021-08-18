@@ -45,7 +45,8 @@ def get_books(urls, language):
 
 
 def download_books(links, name, format):
-    os.chdir(os.path.join(os.path.abspath(os.getcwd()), 'data'))
+    if (os.getcwd() != 'data'):
+        os.chdir(os.path.join(os.path.abspath(os.getcwd()), 'data'))
     os.makedirs(os.path.join(os.getcwd(), "_".join(name).title()))
     downloads = os.path.abspath("_".join(name).title())
     for link in links:
@@ -55,8 +56,8 @@ def download_books(links, name, format):
                 if 'readme' in a['href']:
                     continue
                 else:
-                    book = open(os.path.join(downloads,os.path.basename(a['href'])),'wb')
-                    for chunk in requests.get('https:' + a['href']).iter_content(100000):
+                    book = open(os.path.join(downloads, os.path.basename(a['href'])),'wb')
+                    for chunk in requests.get("https://www.gutenberg.org" + a['href']).iter_content(100000):
                         book.write(chunk)
                     book.close()
 

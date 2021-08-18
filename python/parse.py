@@ -28,7 +28,10 @@ def to_words(book, punctuation):
 def process_folder(directory, punctuation):
     files = []
     bad_files = []
-    os.chdir(os.path.join(os.path.abspath(os.getcwd()), 'data/' + directory))
+    if (os.path.basename(os.getcwd()) != 'data'):
+        os.chdir(os.path.join(os.path.abspath(os.getcwd()), 'data/' + directory))
+    else:
+        os.chdir(os.path.join(os.path.abspath(os.getcwd()), directory))
     for file in os.listdir():
         f = open(file)
         lines = f.readlines()

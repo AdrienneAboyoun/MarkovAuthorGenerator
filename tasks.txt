@@ -1,11 +1,13 @@
 TO DO:
 	general:
 		web interface
-			replace prints w smth
+			replace prints w smth (show progress bc app is slow)
+			change secret key, figure out how to keep secret on glitch/github
+		migrate to glitch
 		make faster
             not sure how...
+		testing
 		documentation (https://docs.python-guide.org/writing/documentation)
-
 	**Extension**
 	zipf:
 		plotting zipf distributions of various authors could be cool

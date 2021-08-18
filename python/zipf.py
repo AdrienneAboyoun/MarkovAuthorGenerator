@@ -1,3 +1,5 @@
+import random
+
 def word_freq(words):
     freq = dict()
     for word in words:
