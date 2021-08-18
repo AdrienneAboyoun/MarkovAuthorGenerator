@@ -1,0 +1,11 @@
+TO DO:
+	general:
+		web interface
+			replace prints w smth
+		make faster
+            not sure how...
+		documentation (https://docs.python-guide.org/writing/documentation)
+
+	**Extension**
+	zipf:
+		plotting zipf distributions of various authors could be cool

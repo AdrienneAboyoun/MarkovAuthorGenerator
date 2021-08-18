@@ -1,0 +1,37 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Markov Author Generator
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+      <h1 class="pt-5 pb-2">Welcome to the Markov Author Generator!</h1>
+
+      <p class="lead">This site was created to explore Markov analysis, by using it to generate text in the style of famous writers, 
+          using data from Project Gutenberg. This restricts your selection of writers to those who are in the public domain, 
+          i.e. they published books before 1923. You are welcome to enter multiple authors and have the AI blend their styles together :)</p>
+
+      {{ wtf.quick_form(form) }}
+
+      <p class="pt-5"><strong>{{ message }}</strong></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
